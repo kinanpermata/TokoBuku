@@ -30,10 +30,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-    <a class="nav-item nav-link" href="<?= base_url(); ?>transaksi">Tabel Transaksi (Tabel Relasi)</a>
+      <a class="nav-item nav-link" href="<?= base_url(); ?>transaksi">Tabel Transaksi</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>pembeli">Data Pembeli</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>buku">Data Buku</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>pegawai">Data Pegawai</a>
+      <a class="nav-item nav-link" href="<?= base_url(); ?>relasi">Tabel Relasi</a>
     </div>
   </div>
   </div>
