@@ -44,8 +44,10 @@ class pembeli_model extends CI_Model {
 
     public function cariDataPembeli(){
         $keyword=$this->input->post('keyword');
-        $this->db->like('nama_pembeli',$keyword);
+        $this->db->like('id_pembeli',$keyword);
+        $this->db->or_like('nama_pembeli',$keyword);
         $this->db->or_like('alamat',$keyword);
+        $this->db->or_like('notelp',$keyword);
         return $this->db->get('pembeli')->result_array();
     }
 

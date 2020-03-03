@@ -8,12 +8,15 @@
         <div class="card-body">
             <h5 class="card-title"><?= $pegawai['nama_pegawai']; ?></h5>
             <p class="card-text">
+                <label for=""><b> ID Pegawai: </b></label>
+                <?= $pegawai['id_pegawai']; ?></p>
+            <p class="card-text">
                 <label for=""><b> Alamat: </b></label>
                 <?= $pegawai['alamat']; ?></p>
             <p class="card-text">
                 <label for=""><b> No. Telepon: </b></label>
                 <?= $pegawai['notelp']; ?></p>
-            <a href="<?= base_url();?>pegawai" class="btn btn-primary">kembali</a>
+            <a href="<?= base_url();?>pegawai" class="btn btn-primary">Kembali</a>
         </div>
         </div>
         </div>

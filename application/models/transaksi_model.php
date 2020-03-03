@@ -6,10 +6,12 @@ class transaksi_model extends CI_Model {
 
     public function getAlltransaksi()
     {
-        // https://www.codeigniter.com/user_guide/database/query_builder.html#selecting-data
-        $query = $this->db->get('transaksi');
-
-        // https://www.codeigniter.com/user_guide/database/results.html
+        $this->db->select('*');
+        $this->db->from('transaksi trk');
+        $this->db->join('pembeli pbl','pbl.id_pembeli = trk.id_pembeli');
+        $this->db->join('buku bk','bk.id_buku = trk.id_buku');
+        $this->db->join('pegawai pgw','pgw.id_pegawai = trk.id_pegawai');
+        $query = $this->db->get();
         return $query->result_array();
     }
 
@@ -50,6 +52,9 @@ class transaksi_model extends CI_Model {
         $keyword=$this->input->post('keyword');
         $this->db->like('id_transaksi',$keyword);
         $this->db->or_like('id_pembeli',$keyword);
+        $this->db->or_like('id_pegawai',$keyword);
+        $this->db->or_like('id_buku',$keyword);
+        $this->db->or_like('harga',$keyword);
         return $this->db-> get('transaksi')->result_array();
     }
 }

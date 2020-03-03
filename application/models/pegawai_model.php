@@ -44,9 +44,10 @@ class pegawai_model extends CI_Model {
 
     public function cariDataPegawai(){
         $keyword=$this->input->post('keyword');
-        $this->db->like('nama_pegawai',$keyword);
+        $this->db->like('id_pegawai',$keyword);
+        $this->db->or_like('nama_pegawai',$keyword);
         $this->db->or_like('alamat',$keyword);
-        return $this->db->get('pegawai')->result_array();
+        return $this->db->get('notelp')->result_array();
     }
 
 }

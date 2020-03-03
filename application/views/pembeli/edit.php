@@ -31,7 +31,6 @@
                                     id="nama_pembeli" 
                                     name="nama_pembeli"
                                     value="<? $pembeli['nama_pembeli'];?>">
-                                <!-- <small class="form-text text-danger"><?= form_error('nama_pembeli');?></small> -->
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>

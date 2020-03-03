@@ -31,7 +31,6 @@
                                     id="nama_pegawai" 
                                     name="nama_pegawai"
                                     value="<? $pegawai['nama_pegawai'];?>">
-                                <!-- <small class="form-text text-danger"><?= form_error('nama_pegawai');?></small> -->
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>

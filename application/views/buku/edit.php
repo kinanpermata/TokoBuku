@@ -31,7 +31,6 @@
                                     id="judul_buku" 
                                     name="judul_buku"
                                     value="<? $buku['judul_buku'];?>">
-                                <!-- <small class="form-text text-danger"><?= form_error('nama');?></small> -->
                         </div>
                         <div class="form-group">
                             <label for="pengarang">Pengarang</label>

@@ -46,8 +46,10 @@ class buku_model extends CI_Model {
 
     public function cariDataBuku(){
         $keyword=$this->input->post('keyword');
-        $this->db->like('judul_buku',$keyword);
+        $this->db->like('id_buku',$keyword);
+        $this->db->or_like('judul_buku',$keyword);
         $this->db->or_like('pengarang',$keyword);
+        $this->db->or_like('penerbit',$keyword);
         return $this->db-> get('buku')->result_array();
     }
 }

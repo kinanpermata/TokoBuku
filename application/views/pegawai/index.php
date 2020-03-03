@@ -51,7 +51,7 @@
                     <a href="<?= base_url();?>pegawai/edit/<?= $pgw['id_pegawai'];?>"
                     class="badge badge-success float-right">Edit</a>
                     <a href="<?= base_url();?>pegawai/detail/<?= $pgw['id_pegawai'];?>"
-                    class="badge badge-primary float-right">Detail</a>
+                    class="badge badge-info float-right">Detail</a>
                 </li>
             <?php endforeach; ?>
         </ul>
