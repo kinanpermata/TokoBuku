@@ -30,11 +30,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="<?= base_url(); ?>pembeli">Data Pembeli</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>buku">Data Buku</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>pegawai">Data Pegawai</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>transaksi">Transaksi</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>kategori">Kategori Buku</a>
+      <a class="nav-item nav-link" href="<?= base_url(); ?>user">Kategori Buku</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
     </div>
   </div>

@@ -10,6 +10,10 @@ class pembeli extends CI_Controller {
          $this->load->model('pembeli_model');
          $this->load->helper('form');
          $this->load->library('form_validation');
+
+         if($this->session->userdata('level')!="admin"){
+            redirect('login','refresh');
+        }
     }
 
     public function index()
