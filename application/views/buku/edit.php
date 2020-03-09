@@ -48,14 +48,6 @@
                                 name="penerbit"
                                 value="<? $buku['penerbit'];?>">
                         </div>
-                        <div class="form-group">
-                           <label for="harga">Harga</label>
-                           <input type="harga" 
-                                class="form-control" 
-                                id="harga" 
-                                name="harga"
-                                value="<? $buku['harga'];?>">
-                        </div>
                         <button type="submit" name="edit" class="btn btn-primary float-right">Edit</button>
                     </form>
                 </div>

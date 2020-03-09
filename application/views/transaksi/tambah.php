@@ -51,6 +51,7 @@
                                     <?php endforeach; ?>
                             </select>
                         </div>
+                        <div class="form-group">
                         <label for="id_transaksi">Judul Buku</label>
                             <select class="form-control" id="judul_buku" name="judul_buku">
                                 <?php foreach ($buku as $bk) : ?>
@@ -58,13 +59,11 @@
                                     <?php endforeach; ?>
                             </select>
                         </div>
-                        <label for="id_transaksi">Harga</label>
-                            <select class="form-control" id="harga" name="harga">
-                                <?php foreach ($buku as $bk) : ?>
-                                    <option value="<?= $bk['harga'] ?>" selected><?= $bk['harga'] ?></option>
-                                    <?php endforeach; ?>
-                            </select>
+                        <div class="form-group">
+                            <label for="id_transaksi">Harga</label>
+                            <input type="text" class="form-control" id="harga" name="harga">
                         </div>
+                        <div class="form-group">
                         <label for="id_transaksi">Nama Pegawai</label>
                             <select class="form-control" id="nama_pegawai" name="nama_pegawai">
                                 <?php foreach ($pegawai as $pgw) : ?>

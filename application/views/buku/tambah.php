@@ -31,10 +31,6 @@
                                 <label for="penerbit">Penerbit</label>
                                 <input type="text" class="form-control" id="penerbit" name="penerbit">
                             </div>
-                            <div class="form-group">
-                                <label for="harga">Harga</label>
-                                <input type="int" class="form-control" id="harga" name="harga">
-                            </div>
                             <button type="submit" name="submit" class="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>

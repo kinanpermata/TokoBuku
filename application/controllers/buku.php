@@ -34,7 +34,6 @@ class buku extends CI_Controller {
         $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
-        $this->form_validation->set_rules('harga', 'Harga', 'required');
         
         if ($this->form_validation->run() == FALSE){
             # code...
@@ -72,8 +71,7 @@ class buku extends CI_Controller {
         $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
-        $this->form_validation->set_rules('harga', 'Harga', 'required');
-
+        
         if ($this->form_validation->run() == FALSE){
             # code...
             $this->load->view('template/header', $data);

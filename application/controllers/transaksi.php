@@ -32,7 +32,10 @@ class transaksi extends CI_Controller {
     public function tambah()
     {
         $data['title']='Form Menambahkan Data Transaksi';
+        
         $this->form_validation->set_rules('id_transaksi', 'ID Transaksi', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required | numeric');
+        
         $data['pembeli'] = $this->pembeli_model->getAllpembeli();
         $data['pegawai'] = $this->pegawai_model->getAllpegawai();
         $data['buku'] = $this->buku_model->getAllbuku();
@@ -60,7 +63,10 @@ class transaksi extends CI_Controller {
     {
         $data['title']='Form Edit Data Transaksi';
         $data['transaksi']=$this->transaksi_model->getTransaksiByID($id);
+
         $this->form_validation->set_rules('id_transaksi', 'ID Transaksi', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required | numeric');
+
         $data['pembeli'] = $this->pembeli_model->getAllpembeli();
         $data['pegawai'] = $this->pegawai_model->getAllpegawai();
         $data['buku'] = $this->buku_model->getAllbuku();

@@ -61,12 +61,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="harga">Harga</label>
-                            <select class="form-control" id="harga" name="harga">
-                                <?php foreach ($buku as $bk) : ?>
-                                    <option value="<?= $bk['harga'] ?>" selected><?= $bk['harga'] ?></option>
-                                    <?php endforeach; ?>
-                            </select>
+                            <label for="id_transaksi">Harga</label>
+                            <input type="text" class="form-control" id="harga" name="harga">
                         </div>
                         <div class="form-group">
                             <label for="nama_pegawai">Nama Pegawai</label>
