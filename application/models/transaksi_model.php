@@ -22,6 +22,9 @@ class transaksi_model extends CI_Model {
             "id_pembeli" => $this->input->post('id_pembeli',true),
             "id_pegawai" => $this->input->post('id_pegawai',true),
             "id_buku" => $this->input->post('id_buku',true),
+            "nama_pembeli" => $this->input->post('nama_pembeli',true),
+            "judul_buku" => $this->input->post('judul_buku',true),
+            "nama_pegawai" => $this->input->post('nama_pegawai',true),
             "harga" => $this->input->post('harga',true)
         ];
         $this->db->insert('transaksi', $data);
@@ -42,6 +45,9 @@ class transaksi_model extends CI_Model {
             "id_pembeli" => $this->input->post('id_pembeli',true),
             "id_pegawai" => $this->input->post('id_pegawai',true),
             "id_buku" => $this->input->post('id_buku',true),
+            "nama_pembeli" => $this->input->post('nama_pembeli',true),
+            "judul_buku" => $this->input->post('judul_buku',true),
+            "nama_pegawai" => $this->input->post('nama_pegawai',true),
             "harga" => $this->input->post('harga',true)
         ];
         $this->db->where('id_transaksi',$this->input->post('id_transaksi'));
@@ -51,9 +57,9 @@ class transaksi_model extends CI_Model {
     public function cariDataTransaksi(){
         $keyword=$this->input->post('keyword');
         $this->db->like('id_transaksi',$keyword);
-        $this->db->or_like('id_pembeli',$keyword);
-        $this->db->or_like('id_pegawai',$keyword);
-        $this->db->or_like('id_buku',$keyword);
+        $this->db->or_like('nama_pembeli',$keyword);
+        $this->db->or_like('nama_pegawai',$keyword);
+        $this->db->or_like('judul_buku',$keyword);
         $this->db->or_like('harga',$keyword);
         return $this->db-> get('transaksi')->result_array();
     }

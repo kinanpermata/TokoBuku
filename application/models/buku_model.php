@@ -19,7 +19,8 @@ class buku_model extends CI_Model {
             "id_buku" => $this->input->post('id_buku',true), 
             "judul_buku" => $this->input->post('judul_buku',true),
             "pengarang" => $this->input->post('pengarang',true),
-            "penerbit" => $this->input->post('penerbit',true)
+            "penerbit" => $this->input->post('penerbit',true),
+            "harga" => $this->input->post('harga',true)
         ];
         $this->db->insert('buku', $data);
     }
@@ -38,7 +39,8 @@ class buku_model extends CI_Model {
             "id_buku" => $this->input->post('id_buku',true), 
             "judul_buku" => $this->input->post('judul_buku',true),
             "pengarang" => $this->input->post('pengarang',true),
-            "penerbit" => $this->input->post('penerbit',true)
+            "penerbit" => $this->input->post('penerbit',true),
+            "harga" => $this->input->post('harga',true)
         ];
         $this->db->where('id_buku',$this->input->post('id_buku'));
         $this->db->update('buku',$data);

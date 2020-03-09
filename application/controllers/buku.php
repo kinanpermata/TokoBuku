@@ -30,9 +30,11 @@ class buku extends CI_Controller {
 
     public function tambah(){
         $data['title']='Form Menambahkan Data Buku';
+        $this->form_validation->set_rules('id_buku', 'Id_buku', 'required');
         $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
         
         if ($this->form_validation->run() == FALSE){
             # code...
@@ -66,9 +68,11 @@ class buku extends CI_Controller {
         $data['title']='Form Edit Data Buku';
         $data['buku']=$this->buku_model->getbukuByID($id);
         
+        $this->form_validation->set_rules('id_buku', 'Id_buku', 'required');
         $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
 
         if ($this->form_validation->run() == FALSE){
             # code...

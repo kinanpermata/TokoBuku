@@ -17,7 +17,7 @@
                         <!-- https://getbootstrap.com/docs/4.1/components/forms/ -->
                             <div class="form-group">
                                 <label for="id_pembeli">ID Pembeli</label>
-                                <input type="number" class="form-control" id="id_pembeli" name="id_pembeli">
+                                <input type="text" class="form-control" id="id_pembeli" name="id_pembeli">
                             </div>
                             <div class="form-group">
                                 <label for="nama_pembeli">Nama</label>

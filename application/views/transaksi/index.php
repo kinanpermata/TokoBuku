@@ -48,9 +48,12 @@
                 <th>ID Pembeli</th>
                 <th>ID Pegawai</th>
                 <th>ID Buku</th>
+                <th>Nama Pembeli</th>
+                <th>Judul</th>
                 <th>Harga</th>
-                <th>Edit</th>
+                <th>Nama Pegawai</th>              
                 <th>Hapus</th>
+                <th>Edit</th>
             </tr>
             <?php foreach ($transaksi as $trk) { ?>
             <tr>
@@ -58,7 +61,10 @@
                 <td><?php echo $trk['id_pembeli']; ?></td>
                 <td><?php echo $trk['id_pegawai']; ?></td>
                 <td><?php echo $trk['id_buku']; ?></td>
+                <td><?php echo $trk['nama_pembeli']; ?></td>
+                <td><?php echo $trk['judul_buku']; ?></td>
                 <td><?php echo $trk['harga']; ?></td>
+                <td><?php echo $trk['nama_pembeli']; ?></td>
                 <td><a href="<?= base_url();?>transaksi/hapus/<?= $trk['id_transaksi'];?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus');">Hapus</a></td>
                 <td><a href="<?= base_url();?>transaksi/edit/<?= $trk['id_transaksi'];?>"  class="badge badge-success float-right">Edit</a></td>
             </tr>

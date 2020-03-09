@@ -44,8 +44,33 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="harga">Harga</label>
-                            <input type="text" class="form-control" id="harga" name="harga">
+                        <label for="id_transaksi">Nama Pembeli</label>
+                            <select class="form-control" id="nama_pembeli" name="nama_pembeli">
+                                <?php foreach ($pembeli as $pbl) : ?>
+                                    <option value="<?= $pbl['nama_pembeli'] ?>" selected><?= $pbl['nama_pembeli'] ?></option>
+                                    <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <label for="id_transaksi">Judul Buku</label>
+                            <select class="form-control" id="judul_buku" name="judul_buku">
+                                <?php foreach ($buku as $bk) : ?>
+                                    <option value="<?= $bk['judul_buku'] ?>" selected><?= $bk['judul_buku'] ?></option>
+                                    <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <label for="id_transaksi">Harga</label>
+                            <select class="form-control" id="harga" name="harga">
+                                <?php foreach ($buku as $bk) : ?>
+                                    <option value="<?= $bk['harga'] ?>" selected><?= $bk['harga'] ?></option>
+                                    <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <label for="id_transaksi">Nama Pegawai</label>
+                            <select class="form-control" id="nama_pegawai" name="nama_pegawai">
+                                <?php foreach ($pegawai as $pgw) : ?>
+                                    <option value="<?= $pgw['id_pegawai'] ?>" selected><?= $pgw['id_pegawai'] ?></option>
+                                    <?php endforeach; ?>
+                            </select>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary float-right"> Submit </button>
                     </form>

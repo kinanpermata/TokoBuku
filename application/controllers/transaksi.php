@@ -36,7 +36,6 @@ class transaksi extends CI_Controller {
         $data['pembeli'] = $this->pembeli_model->getAllpembeli();
         $data['pegawai'] = $this->pegawai_model->getAllpegawai();
         $data['buku'] = $this->buku_model->getAllbuku();
-        $this->form_validation->set_rules('harga', 'Harga', 'required');
 
         if($this->form_validation->run() == FALSE){
             # code...
@@ -65,7 +64,6 @@ class transaksi extends CI_Controller {
         $data['pembeli'] = $this->pembeli_model->getAllpembeli();
         $data['pegawai'] = $this->pegawai_model->getAllpegawai();
         $data['buku'] = $this->buku_model->getAllbuku();
-        $this->form_validation->set_rules('harga', 'Harga', 'required');
 
         if($this->form_validation->run() == FALSE){
             # code...

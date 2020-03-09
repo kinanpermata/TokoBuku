@@ -16,6 +16,9 @@
             <p class="card-text">
                 <label for=""><b> Penerbit: </b></label>
                 <?= $buku['penerbit']; ?></p>
+            <p class="card-text">
+                <label for=""><b> Harga: </b></label>
+                <?= $buku['harga']; ?></p>
             <a href="<?= base_url();?>buku" class="btn btn-primary">Kembali</a>
         </div>
         </div>
