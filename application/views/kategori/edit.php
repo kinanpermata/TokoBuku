@@ -24,7 +24,15 @@
                             <label for="id_buku">ID Buku</label>
                             <select class="form-control" id="id_buku" name="id_buku">
                                 <?php foreach ($buku as $bk) : ?>
-                                    <option value="<?= $bk['id_buku'] ?>" selected><?= $bk['judul_buku'] ?></option>
+                                    <option value="<?= $bk['id_buku'] ?>" selected><?= $bk['id_buku'] ?></option>
+                                    <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="judul_buku">Judul Buku</label>
+                            <select class="form-control" id="judul_buku" name="judul_buku">
+                                <?php foreach ($buku as $bk) : ?>
+                                    <option value="<?= $bk['judul_buku'] ?>" selected><?= $bk['judul_buku'] ?></option>
                                     <?php endforeach; ?>
                             </select>
                         </div>

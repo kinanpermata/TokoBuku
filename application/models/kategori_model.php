@@ -19,6 +19,7 @@ class kategori_model extends CI_Model {
         $data=[
             "id_kategori" => $this->input->post('id_kategori',true), 
             "id_buku" => $this->input->post('id_buku',true),
+            "judul_buku" => $this->input->post('judul_buku',true),
             "kategori" => $this->input->post('kategori',true)
         ];
         $this->db->insert('kategori', $data);

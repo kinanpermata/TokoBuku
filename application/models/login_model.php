@@ -19,6 +19,20 @@ class login_model extends CI_Model {
             return false;
         }
     }
+
+    public function signin()
+    {
+        $data['title'] = 'Sign In';
+        $data['level'] = ['admin','nonadmin'];
+        $data=[
+            "username" => $this->input->post('username',true), 
+            "password" => $this->input->post('password',true),
+            "level" => $this->input->post('level',true),
+        ];
+        $this->db->insert('user', $data);
+    }
+
+
 }
 
 /* End of file ModelName.php */

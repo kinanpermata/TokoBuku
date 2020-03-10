@@ -13,7 +13,7 @@ class user extends CI_Controller {
         $this->load->model('user_model');
         $this->load->model('kategori_model');
 
-        if($this->session->userdata('level')!="user"){
+        if($this->session->userdata('level')!="nonadmin"){
             redirect('login','refresh');
         }
     }
@@ -22,10 +22,10 @@ class user extends CI_Controller {
     {
         
         $data['title']='List Kategori Buku';
-        $data['kategori']=$this->user_model->getAllkategori();
+        $data['kategori']=$this->kategori_model->getAllkategori();
 
         if($this->input->post('keyword')){
-            $data['kategori']=$this->user_model->cariDataKategori();
+            $data['kategori']=$this->kategori_model->cariDataKategori();
         }
 
         $this->load->view('template/header_user', $data);

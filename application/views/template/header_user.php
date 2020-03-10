@@ -31,7 +31,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="<?= base_url(); ?>user">Kategori Buku</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
+      <a href="<?= base_url(); ?>login/logout" class="btn btn-danger">Logout</a>
     </div>
   </div>
   </div>

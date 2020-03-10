@@ -26,6 +26,7 @@ form_open('login/proses_login');
                                     <div class="invalid-feedback">Password salah.</div>
                                 </div>
                                 <button type="submit" class="btn btn-primary float-right" id="btnLogin"> Login </button>
+                                <a href="<?= base_url();?>login/signin" class="btn btn-primary">Sign In</a>
                             </form>
                         </div>
                     </div>

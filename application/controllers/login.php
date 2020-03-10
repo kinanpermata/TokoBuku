@@ -21,6 +21,27 @@ class login extends CI_Controller {
         $this->load->view('template/footer', $data);
     }
 
+    public function signin()
+    {
+        $data['title']='Sign In';
+        $data['level'] = ['admin','nonadmin'];
+        $this->form_validation->set_rules('username', 'username', 'required');
+        $this->form_validation->set_rules('password', 'password', 'required');
+        $this->form_validation->set_rules('level', 'level', 'required');
+
+        if($this->form_validation->run() == FALSE){
+            # code...
+            $this->load->view('template/header_login',$data);
+            $this->load->view('login/signin',$data);
+            $this->load->view('template/footer');
+        }else{
+            # code...
+            $this->login_model->signin();
+            $this->session->set_flashdata('flash-data','ditambahkan');
+            redirect('login','refresh');
+        }
+    }
+
     public function proses_login(){
         $username=htmlspecialchars($this->input->post('uname1'));
         $password=htmlspecialchars($this->input->post('pwd1'));
@@ -34,7 +55,7 @@ class login extends CI_Controller {
 
             if($this->session->userdata('level')=="admin"){
                 redirect('transaksi');
-            } else if($this->session->userdata('level')=="user"){
+            } else if($this->session->userdata('level')=="nonadmin"){
                redirect("user");
             }
 

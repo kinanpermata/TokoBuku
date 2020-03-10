@@ -35,7 +35,7 @@
       <a class="nav-item nav-link" href="<?= base_url(); ?>pegawai">Data Pegawai</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>transaksi">Transaksi</a>
       <a class="nav-item nav-link" href="<?= base_url(); ?>kategori">Kategori Buku</a>
-      <a class="nav-item nav-link" href="<?= base_url(); ?>login/logout">Logout</a>
+      <a href="<?= base_url(); ?>login/logout" class="btn btn-danger">Logout</a>
     </div>
   </div>
   </div>
