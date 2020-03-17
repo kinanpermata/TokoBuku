@@ -41,20 +41,26 @@
             </div>
         <?php endif; ?>
 
-        <ul class="list-group">
-            <?php foreach($pegawai as $pgw):?>
-                <li class="list-group-item">
-                    <?= $pgw['nama_pegawai'];?>
-                    <a href="<?= base_url();?>pegawai/hapus/<?= $pgw['id_pegawai'];?>"
-                    class= "badge badge-danger float-right"
-                    onclick="return confirm('Yakin Data ini akan dihapus');">Hapus</a>
-                    <a href="<?= base_url();?>pegawai/edit/<?= $pgw['id_pegawai'];?>"
-                    class="badge badge-success float-right">Edit</a>
-                    <a href="<?= base_url();?>pegawai/detail/<?= $pgw['id_pegawai'];?>"
-                    class="badge badge-info float-right">Detail</a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <table class="table">
+            <tr>
+                <th>ID Pegawai</th>
+                <th>Nama Pegawai</th>
+                <th>Alamat</th>
+                <th>No. Telepon</th>
+                <th>Hapus</th>
+                <th>Edit</th>
+            </tr>
+            <?php foreach ($pegawai as $pgw) { ?>
+            <tr>
+                <td><?php echo $pgw['id_pegawai']; ?></td>
+                <td><?php echo $pgw['nama_pegawai']; ?></td>
+                <td><?php echo $pgw['alamat']; ?></td>
+                <td><?php echo $pgw['notelp']; ?></td>
+                <td><a href="<?= base_url();?>pegawai/hapus/<?= $pgw['id_pegawai'];?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus');">Hapus</a></td>
+                <td><a href="<?= base_url();?>pegawai/edit/<?= $pgw['id_pegawai'];?>"  class="badge badge-success float-right">Edit</a></td>
+            </tr>
+            <?php } ?>    
+        </table>
         </div>
     </div>
 </div>

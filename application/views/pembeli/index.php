@@ -41,20 +41,26 @@
             </div>
         <?php endif; ?>
 
-        <ul class="list-group">
-            <?php foreach($pembeli as $pbl):?>
-                <li class="list-group-item">
-                    <?= $pbl['nama_pembeli'];?>
-                    <a href="<?= base_url();?>pembeli/hapus/<?= $pbl['id_pembeli'];?>"
-                    class= "badge badge-danger float-right"
-                    onclick="return confirm('Yakin Data ini akan dihapus');">Hapus</a>
-                    <a href="<?= base_url();?>pembeli/edit/<?= $pbl['id_pembeli'];?>"
-                    class="badge badge-success float-right">Edit</a>
-                    <a href="<?= base_url();?>pembeli/detail/<?= $pbl['id_pembeli'];?>"
-                    class="badge badge-info float-right">Detail</a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <table class="table">
+            <tr>
+                <th>ID Pembeli</th>
+                <th>Nama Pembeli</th>
+                <th>Alamat</th>
+                <th>No. Telepon</th>
+                <th>Hapus</th>
+                <th>Edit</th>
+            </tr>
+            <?php foreach ($pembeli as $pbl) { ?>
+            <tr>
+                <td><?php echo $pbl['id_pembeli']; ?></td>
+                <td><?php echo $pbl['nama_pembeli']; ?></td>
+                <td><?php echo $pbl['alamat']; ?></td>
+                <td><?php echo $pbl['notelp']; ?></td>
+                <td><a href="<?= base_url();?>pembeli/hapus/<?= $pbl['id_pembeli'];?>" class="badge badge-danger float-right" onclick="return confirm('Yakin Data ini akan dihapus');">Hapus</a></td>
+                <td><a href="<?= base_url();?>pembeli/edit/<?= $pbl['id_pembeli'];?>"  class="badge badge-success float-right">Edit</a></td>
+            </tr>
+            <?php } ?>    
+        </table>
         </div>
     </div>
 </div>

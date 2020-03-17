@@ -34,21 +34,29 @@ class buku extends CI_Controller {
 
     public function tambah(){
         $data['title']='Form Menambahkan Data Buku';
+        $this->buku_model->tambahdatabuku();
         $this->form_validation->set_rules('id_buku', 'Id_buku', 'required');
-        $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
+        $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
+        $this->form_validation->set_rules('stok', 'Stok', 'required');
+        
         
         if ($this->form_validation->run() == FALSE){
-            # code...
             $this->load->view('template/header', $data);
             $this->load->view('buku/tambah', $data);
             $this->load->view('template/footer');
         } else{
-            # code...
-            $this->buku_model->tambahdatabuku();
-            $this->session->set_flashdata('flash-data', 'ditambahkan');
-            redirect('buku', 'refresh');
+            $upload = $this->buku_model->upload();
+
+            if($upload['result'] == 'success'){
+                $this->buku_model->tambahdatabuku($upload);
+                $this->session->set_flashdata('flash-data', 'ditambahkan');
+                redirect('buku', 'refresh');
+            } else{
+                echo $upload['error'];
+            }
         }
         
     }
@@ -59,30 +67,22 @@ class buku extends CI_Controller {
         redirect('buku','refresh');
     }
 
-    public function detail($id){
-        $data['title']='Detail Buku';
-        $data['buku']=$this->buku_model->getbukuByID($id);
-        $this->load->view('template/header', $data);
-        $this->load->view('buku/detail', $data);
-        $this->load->view('template/footer');
-    }
-
     public function edit($id){
         $data['title']='Form Edit Data Buku';
         $data['buku']=$this->buku_model->getbukuByID($id);
         
         $this->form_validation->set_rules('id_buku', 'Id_buku', 'required');
-        $this->form_validation->set_rules('judul_buku', 'Judul_buku', 'required');
+        $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required');
         $this->form_validation->set_rules('pengarang', 'Pengarang', 'required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
+        $this->form_validation->set_rules('stok', 'stok', 'required');
         
         if ($this->form_validation->run() == FALSE){
-            # code...
             $this->load->view('template/header', $data);
             $this->load->view('buku/edit', $data);
             $this->load->view('template/footer');
         } else{
-            # code...
             $this->buku_model->ubahdatabuku();
             $this->session->set_flashdata('flash-data', 'diedit');
             redirect('buku', 'refresh');

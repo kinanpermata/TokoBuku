@@ -13,17 +13,36 @@ class buku_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function tambahdataBuku()
+    public function tambahdataBuku($upload)
     {
         $data=[
             "id_buku" => $this->input->post('id_buku',true), 
             "judul_buku" => $this->input->post('judul_buku',true),
             "pengarang" => $this->input->post('pengarang',true),
-            "penerbit" => $this->input->post('penerbit',true)
+            "penerbit" => $this->input->post('penerbit',true),
+            "harga" => $this->input->post('harga',true),
+            "stok" => $this->input->post('stok',true),
+            "gambar" => $upload['file']['file_name']
         ];
         $this->db->insert('buku', $data);
     }
 
+    public function upload(){
+        $config['upload_path'] = './uploads/buku/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size'] = 2048;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('gambar')){
+            $return = array('result' => 'success', 'file' => $this->upload->data(), 'error' => '');
+            return $return;
+        } else{
+            $return = array('result' => 'failed', 'file' => '', 'error' => $this->upload->display_error());
+            return $return;
+        }
+    }
+    
     public function hapusdataBuku($id){
         $this->db->where('id_buku', $id);
         $this->db->delete('buku');
@@ -39,6 +58,8 @@ class buku_model extends CI_Model {
             "judul_buku" => $this->input->post('judul_buku',true),
             "pengarang" => $this->input->post('pengarang',true),
             "penerbit" => $this->input->post('penerbit',true),
+            "harga" => $this->input->post('harga',true),
+            "stok" => $this->input->post('stok',true)
         ];
         $this->db->where('id_buku',$this->input->post('id_buku'));
         $this->db->update('buku',$data);
@@ -46,10 +67,8 @@ class buku_model extends CI_Model {
 
     public function cariDataBuku(){
         $keyword=$this->input->post('keyword');
-        $this->db->like('id_buku',$keyword);
-        $this->db->or_like('judul_buku',$keyword);
+        $this->db->like('judul_buku',$keyword);
         $this->db->or_like('pengarang',$keyword);
-        $this->db->or_like('penerbit',$keyword);
         return $this->db-> get('buku')->result_array();
     }
 }
