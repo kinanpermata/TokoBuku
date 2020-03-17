@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pegawai_model extends CI_Model {
+class Pegawai_model extends CI_Model {
     public function getAllpegawai(){
         // https://www.codeigniter.com/user_guide/database/query_builder.html#selecting-data
         $query=$this->db->get('pegawai');

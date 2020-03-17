@@ -29,14 +29,6 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="id_pegawai">ID Pegawai</label>
-                            <select class="form-control" id="id_pegawai" name="id_pegawai">
-                                <?php foreach ($pegawai as $pgw) : ?>
-                                    <option value="<?= $pgw['id_pegawai'] ?>" selected><?= $pgw['id_pegawai'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="id_buku">ID Buku</label>
                             <select class="form-control" id="id_buku" name="id_buku">
                                 <?php foreach ($buku as $bk) : ?>

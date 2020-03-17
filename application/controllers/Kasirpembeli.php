@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pembeli extends CI_Controller {
+class Kasirpembeli extends CI_Controller {
 
     public function __construct()
     {
@@ -11,7 +11,7 @@ class pembeli extends CI_Controller {
          $this->load->helper('form');
          $this->load->library('form_validation');
 
-         if($this->session->userdata('level')!="admin"){
+         if($this->session->userdata('level')!="kasir"){
             redirect('login','refresh');
         }
     }
@@ -26,8 +26,8 @@ class pembeli extends CI_Controller {
             $data['pembeli']=$this->Pembeli_model->cariDataPembeli();
         }
         
-        $this->load->view('template/header', $data);
-        $this->load->view('pembeli/index', $data);
+        $this->load->view('template/header_kasir', $data);
+        $this->load->view('kasirpembeli/index', $data);
         $this->load->view('template/footer');
     }
 
@@ -39,8 +39,8 @@ class pembeli extends CI_Controller {
         
         if ($this->form_validation->run() == FALSE){
             # code...
-            $this->load->view('template/header', $data);
-            $this->load->view('pembeli/tambah', $data);
+            $this->load->view('template/header_kasir', $data);
+            $this->load->view('kasirpembeli/tambah', $data);
             $this->load->view('template/footer');
         } else{
             # code...
@@ -60,8 +60,8 @@ class pembeli extends CI_Controller {
     public function detail($id_pembeli){
         $data['title']='Detail Pembeli';
         $data['pembeli']=$this->Pembeli_model->getpembeliByID($id_pembeli);
-        $this->load->view('template/header', $data);
-        $this->load->view('pembeli/detail', $data);
+        $this->load->view('template/header_kasir', $data);
+        $this->load->view('kasirpembeli/detail', $data);
         $this->load->view('template/footer');
     }
 
@@ -75,8 +75,8 @@ class pembeli extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE){
             # code...
-            $this->load->view('template/header', $data);
-            $this->load->view('pembeli/edit', $data);
+            $this->load->view('template/header_kasir', $data);
+            $this->load->view('kasirpembeli/edit', $data);
             $this->load->view('template/footer');
         } else{
             # code...

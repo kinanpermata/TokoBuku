@@ -24,12 +24,6 @@
                             <input type="text" class="form-control" id="password" name="password">
                         </div>
                         <div class="form-group">
-                        <label for="level">Kategori</label>
-                            <select class="form-control" id="level" name="level">
-                                <?php foreach ($level as $key) : ?>
-                                    <option value="<?= $key ?>" selected><?= $key ?></option>
-                                    <?php endforeach; ?>
-                            </select>
                         <button type="submit" name="submit" class="btn btn-primary float-right"> Submit </button>
                     </form>
                 </div>

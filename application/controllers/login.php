@@ -9,7 +9,7 @@ class login extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('form_validation');
-        $this->load->model('login_model');
+        $this->load->model('Login_model');
         $this->load->library('session');
     }
 
@@ -27,7 +27,6 @@ class login extends CI_Controller {
         $data['level'] = ['admin','nonadmin'];
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
-        $this->form_validation->set_rules('level', 'level', 'required');
 
         if($this->form_validation->run() == FALSE){
             # code...
@@ -36,7 +35,7 @@ class login extends CI_Controller {
             $this->load->view('template/footer');
         }else{
             # code...
-            $this->login_model->signin();
+            $this->Login_model->signin();
             $this->session->set_flashdata('flash-data','ditambahkan');
             redirect('login','refresh');
         }
@@ -46,7 +45,7 @@ class login extends CI_Controller {
         $username=htmlspecialchars($this->input->post('uname1'));
         $password=htmlspecialchars($this->input->post('pwd1'));
 
-        $ceklogin=$this->login_model->login($username, $password);
+        $ceklogin=$this->Login_model->login($username, $password);
 
         if($ceklogin){
             foreach($ceklogin as $row);
@@ -57,6 +56,14 @@ class login extends CI_Controller {
                 redirect('transaksi');
             } else if($this->session->userdata('level')=="nonadmin"){
                redirect("user");
+            } else if($this->session->userdata('level')=="kasir"){
+                redirect("kasir");
+            } else if($this->session->userdata('level')=="NULL"){
+                $data['pesan']="Menunggu konfirmasi admin";
+                $data['title'] = 'Login';
+                $this->load->view('template/header_login', $data);
+                $this->load->view('login/index', $data);
+                $this->load->view('template/footer', $data);
             }
 
         } else{

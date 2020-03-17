@@ -13,7 +13,7 @@
     <?php endif; ?>
     <div class="row mt-4">
         <div class="col-md-6">
-            <a href="<?= base_url();?>transaksi/tambah" class="btn btn-primary">Tambah Data</a>
+            <a href="<?= base_url();?>kasirtransaksi/tambah" class="btn btn-primary">Tambah Data</a>
         </div>
     </div>
 

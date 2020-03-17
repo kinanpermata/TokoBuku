@@ -13,12 +13,12 @@
                     </div>
                     <?php endif ?>
                 </div>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id_buku" value="<?= $buku['id_buku'];?>">
                         <!-- https://getbootstrap.com/docs/4.1/components/forms/ -->
                         <div class="form-group">
                             <label for="id_buku">ID Buku</label>
-                            <input type="id_buku" 
+                            <input type="text" 
                                 class="form-control" 
                                 id="id_buku" 
                                 name="id_buku"
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pengarang">Pengarang</label>
-                            <input type="pengarang" 
+                            <input type="text" 
                                 class="form-control" 
                                 id="pengarang" 
                                 name="pengarang"
@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                            <label for="penerbit">Penerbit</label>
-                           <input type="penerbit" 
+                           <input type="text" 
                                 class="form-control" 
                                 id="penerbit" 
                                 name="penerbit"
@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                            <label for="harga">Harga</label>
-                           <input type="harga" 
+                           <input type="number" 
                                 class="form-control" 
                                 id="harga" 
                                 name="harga"
@@ -58,11 +58,19 @@
                         </div>
                         <div class="form-group">
                            <label for="stok">Stok</label>
-                           <input type="stok" 
+                           <input type="number" 
                                 class="form-control" 
                                 id="stok" 
                                 name="stok"
                                 value="<? $buku['stok'];?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="gambar">Gambar</label>
+                            <input type="file" 
+                                class="form-control" 
+                                id="gambar" 
+                                name="gambar"
+                                value="<? $buku['gambar'];?>">
                         </div>
                         <button type="submit" name="edit" class="btn btn-primary float-right">Edit</button>
                     </form>

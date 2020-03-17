@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login_model extends CI_Model {
+class Login_model extends CI_Model {
 
     function login($username,$password){
         $this->db->select('username, password, level');

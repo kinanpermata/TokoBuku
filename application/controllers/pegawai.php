@@ -7,7 +7,7 @@ class pegawai extends CI_Controller {
     public function __construct()
     {
          parent::__construct();
-         $this->load->model('pegawai_model');
+         $this->load->model('Pegawai_model');
          $this->load->helper('form');
          $this->load->library('form_validation');
 
@@ -19,10 +19,10 @@ class pegawai extends CI_Controller {
     public function index()
     {
         $data['title']='Data Pegawai';
-        $data['pegawai']=$this->pegawai_model->getAllPegawai();
+        $data['pegawai']=$this->Pegawai_model->getAllPegawai();
         if($this->input->post('keyword')){
             # code...
-            $data['pegawai']=$this->pegawai_model->cariDataPegawai();
+            $data['pegawai']=$this->Pegawai_model->cariDataPegawai();
         }
         $this->load->view('template/header',$data);
         $this->load->view('pegawai/index',$data);
@@ -44,14 +44,14 @@ class pegawai extends CI_Controller {
             $this->load->view('template/footer');
         }else{
             # code...
-            $this->pegawai_model->tambahdataPegawai();
+            $this->Pegawai_model->tambahdataPegawai();
             $this->session->set_flashdata('flash-data','ditambahkan');
             redirect('pegawai','refresh');
         }
     }
 
     public function hapus($id){
-        $this->pegawai_model->hapusdataPegawai($id);
+        $this->Pegawai_model->hapusdataPegawai($id);
         $this->session->set_flashdata('flash-data','dihapus');
         redirect('pegawai','refresh');
     }
@@ -59,7 +59,7 @@ class pegawai extends CI_Controller {
     public function detail($id)
     {
         $data['title']='Detail Pegawai';
-        $data['pegawai']=$this->pegawai_model->getPegawaiByID($id);
+        $data['pegawai']=$this->Pegawai_model->getPegawaiByID($id);
         $this->load->view('template/header',$data);
         $this->load->view('pegawai/detail',$data);
         $this->load->view('template/footer');
@@ -68,7 +68,7 @@ class pegawai extends CI_Controller {
     public function edit($id)
     {
         $data['title']='Form Edit Data Pegawai';
-        $data['pegawai']=$this->pegawai_model->getPegawaiByID($id);
+        $data['pegawai']=$this->Pegawai_model->getPegawaiByID($id);
         $this->form_validation->set_rules('id_pegawai', 'ID Pegawai', 'required');
         $this->form_validation->set_rules('nama_pegawai', 'Nama', 'required');
         $this->form_validation->set_rules('alamat', 'ID Buku', 'required');
@@ -81,7 +81,7 @@ class pegawai extends CI_Controller {
             $this->load->view('template/footer');
         }else{
             # code...
-            $this->pegawai_model->ubahdataPegawai();
+            $this->Pegawai_model->ubahdataPegawai();
             $this->session->set_flashdata('flash-data','diedit');
             redirect('pegawai','refresh');
         }

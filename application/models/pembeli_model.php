@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pembeli_model extends CI_Model {
+class Pembeli_model extends CI_Model {
     public function getAllpembeli(){
         // https://www.codeigniter.com/user_guide/database/query_builder.html#selecting-data
         $query=$this->db->get('pembeli');
